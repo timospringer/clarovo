@@ -28,25 +28,25 @@ $voting = $VotingManager->findById($voting_id);
         
         <h2>Frage: <?php echo $voting->frage?> </h2>
         
-        <form action="Mapper/VotingVoting.php" method="post" role="form" class="form-horizontal">
+        <form role="form" class="form-inlinecy" action="Mapper/VotingVoting.php" method="post">
             
-            <div class="col-sm-1">
+            <div class="form-group">
                 <input type="submit" name="a" id="a" value="<?php echo $voting->a ?>"/>
             </div>
             
-            <div class="col-sm-1">
+            <div class="form-group">
                 <input type="submit" name="b" id="b" value="<?php echo $voting->b ?>"/>
             </div>
             
-            <div class="col-sm-1">
+            <div class="form-group">
                 <input type="submit" name="c" id="c" value="<?php echo $voting->c ?>"/>
             </div>
             
-            <div class="col-sm-1">
+            <div class="form-group">
                 <input type="submit" name="d" id="d" value="<?php echo $voting->d ?>"/>
             </div>
 
-            <div class="col-sm-1">
+            <div class="form-group">
                 <input type="hidden" value="<?php echo htmlspecialchars($voting_id); ?>" class="form-control" name="id_voting" id="id_voting" readonly>
             </div>
         </form>
