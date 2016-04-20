@@ -48,14 +48,14 @@ $voting = $VotingManager->findById($voting_id);
             <?php  if(isset($voting->c) && !empty($voting->c))
             { ?>
                 <div class="form-group">
-                    <input type="submit" name="a" id="a" value="<?php echo $voting->a ?>"/>
+                    <input type="submit" name="c" id="c" value="<?php echo $voting->c ?>"/>
                 </div>
             <?php } ?>
 
             <?php  if(isset($voting->d) && !empty($voting->d))
             { ?>
                 <div class="form-group">
-                    <input type="submit" name="a" id="a" value="<?php echo $voting->a ?>"/>
+                    <input type="submit" name="d" id="d" value="<?php echo $voting->d ?>"/>
                 </div>
             <?php } ?>
 

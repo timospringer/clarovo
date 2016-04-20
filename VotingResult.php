@@ -87,7 +87,7 @@ $voting = $VotingManager->findById($voting_id);
                 chart.render();
             }
         </script>
-        <script type="text/javascript" src="inc/canvasjs.min.js"></script>
+        <script type="text/javascript" src="js/canvasjs.min.js"></script>
     </head>
     <body>
     <div id="chartContainer" style="height: 300px; width: 100%;">
