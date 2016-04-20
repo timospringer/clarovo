@@ -33,7 +33,7 @@ $voting = $VotingManager->findById($voting_id);
 
     <div class="container">
         
-        <h2>Frage: <?php echo $voting->frage?> </h2>
+        <h2>Frage: <?php echo $voting->frage?> </h2><br />
         
         <form role="form" class="form-inlinecy" action="VotingVoting.php" method="post">
             
@@ -44,14 +44,20 @@ $voting = $VotingManager->findById($voting_id);
             <div class="form-group">
                 <input type="submit" name="b" id="b" value="<?php echo $voting->b ?>"/>
             </div>
-            
-            <div class="form-group">
-                <input type="submit" name="c" id="c" value="<?php echo $voting->c ?>"/>
-            </div>
-            
-            <div class="form-group">
-                <input type="submit" name="d" id="d" value="<?php echo $voting->d ?>"/>
-            </div>
+
+            <?php  if(isset($voting->c) && !empty($voting->c))
+            { ?>
+                <div class="form-group">
+                    <input type="submit" name="a" id="a" value="<?php echo $voting->a ?>"/>
+                </div>
+            <?php } ?>
+
+            <?php  if(isset($voting->d) && !empty($voting->d))
+            { ?>
+                <div class="form-group">
+                    <input type="submit" name="a" id="a" value="<?php echo $voting->a ?>"/>
+                </div>
+            <?php } ?>
 
             <div class="form-group">
                 <input type="hidden" value="<?php echo htmlspecialchars($voting_id); ?>" class="form-control" name="id_voting" id="id_voting" readonly>
@@ -59,6 +65,16 @@ $voting = $VotingManager->findById($voting_id);
         </form>
         
     </div>
+
+<input type="hidden" id="refreshed" value="no">
+
+<script type="text/javascript">
+    onload=function(){
+        var e=document.getElementById("refreshed");
+        if(e.value=="no")e.value="yes";
+        else{e.value="no";location.reload();}
+    }
+</script>
 
 
 </body>

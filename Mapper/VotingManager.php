@@ -46,6 +46,20 @@ class VotingManager extends Manager
         }
 
     }
+
+    public function getVotes($id)
+    {
+        try {
+            $stmt = $this->pdo->prepare('SELECT a_vote, b_vote, c_vote, d_vote FROM voting WHERE id = :id');
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Voting');
+            return $stmt->fetch();
+        } catch (PDOException $e) {
+            echo("Fehler! Bitten wenden Sie sich an den Administrator...<br>" . $e->getMessage() . "<br>");
+            die();
+        }
+    }
     
     public function save(Voting $voting)
     {

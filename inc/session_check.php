@@ -9,4 +9,5 @@
     } else {
         $dozent = $_SESSION ["dozent"];
     }
+
 ?>

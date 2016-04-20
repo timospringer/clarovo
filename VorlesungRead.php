@@ -30,7 +30,7 @@ $vorlesung = $VorlesungManager->findById($vorlesung_id);
         <table class="table table-hover table-striped">
             <thead>
             <tr><th class="col-md-1">id</th>
-            <th class="col-md-3">Frage</th>
+            <th class="col-md-2">Frage</th>
             <th class="col-md-1">Antwort A</th>
             <th class="col-md-1">Antwort B</th>
             <th class="col-md-1">Antwort C</th>
@@ -53,7 +53,8 @@ $vorlesung = $VorlesungManager->findById($vorlesung_id);
                 echo "<td>$voting->c</td>";
                 echo "<td>$voting->d</td>";
                 echo "<td>
-                        <a href='VotingRead.php?voting_id=$voting->id' class='btn btn-success btn-sm'>anzeigen</a>
+                        <a href='VotingResult.php?voting_id=$voting->id' class='btn btn-success btn-sm'>anzeigen</a>
+                        <a href='VotingRead.php?voting_id=$voting->id' class='btn btn-primary btn-sm'>link</a>
                         <a href='VotingDelete_do.php?voting_id=$voting->id' class='btn btn-danger btn-sm'>löschen</a>
                       </td>";
                 echo "</tr>";
