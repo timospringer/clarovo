@@ -2,7 +2,7 @@
 <html>
 <?php 
 include("inc/head.php");
-include("inc/cookie_check.php");
+
 ?>
 <body>
 <nav class="navbar navbar-default">
@@ -27,7 +27,9 @@ $voting_id = (int)htmlspecialchars($_POST["id_voting"], ENT_QUOTES, "UTF-8");
 $VotingManager = new VotingManager();
 $voting = $VotingManager->findById($voting_id);
 
-if(isset($_COOKIE["HALLO"])) echo "Sie haben schon gevotet!";
+include("inc/cookie_check.php");
+
+if(isset($_COOKIE["$voting->id"])) echo "Sie haben schon gevotet!";
 else {
     if(isset($_POST['a'])){
         $a_vote = "UPDATE voting SET a_vote=a_vote+1 WHERE id=$voting_id";

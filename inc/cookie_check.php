@@ -1,9 +1,9 @@
 <?php
 
-if (isset($_COOKIE["HALLO"]))
+if (isset($_COOKIE["$voting->id"]))
 $besucht = True;
 else
 $besucht = False;
-setcookie ("HALLO","1", time()+86400);
+setcookie ("$voting->id","12345", time()+86400);
 
 ?>
