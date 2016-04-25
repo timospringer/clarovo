@@ -92,6 +92,5 @@ $voting = $VotingManager->findById($voting_id);
     <body>
     <div id="chartContainer" style="height: 300px; width: 100%;">
     </div>
-
-</body>
+    </body>
 </html>

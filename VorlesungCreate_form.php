@@ -13,7 +13,7 @@ include("inc/session_check.php");
 
 <div class="container">
 
-    <h2>Neue Vorlesung</h2>
+    <h2>Neue Vorlesung</h2><br />
 
     <form class="form-horizontal" role="form" action="VorlesungCreate_do.php" method="post">
         
