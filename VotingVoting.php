@@ -106,47 +106,40 @@ else {
 <html>
 <br />
 <head>
-    <title>Results </title>
-    <script type="text/javascript">
-        window.onload = function () {
-            var chart = new CanvasJS.Chart("chartContainer",
-                {
-                    title:{
-                        text: "Voting-Ergebnisse"
-                    },
-                    animationEnabled: true,
-                    axisY: {
-                        title: "Votes"
-                    },
-                    legend: {
-                        verticalAlign: "bottom",
-                        horizontalAlign: "center"
-                    },
-                    theme: "theme2",
-                    data: [
-
-                        {
-                            type: "column",
-                            showInLegend: true,
-                            legendMarkerColor: "grey",
-                            legendText: "Votes",
-                            dataPoints: [
-                                {y: <?php echo $a ?>, label: "A"},
-                                {y: <?php echo $b ?>,  label: "B" },
-                                {y: <?php echo $c ?>,  label: "C"},
-                                {y: <?php echo $d ?>,  label: "D"},
-                            ]
-                        }
-                    ]
-                });
-
-            chart.render();
-        }
-    </script>
-    <script type="text/javascript" src="js/canvasjs.min.js"></script>
+    <script src="js/Chart.js"></script>
+    <script src="js/jquery-2.2.3.min.js"></script>
 </head>
 <body>
-<div id="chartContainer" style="height: 300px; width: 100%;">
+<div class="container">
+    <canvas id="myChart">
+        <script>
+            var ctx = document.getElementById("myChart");
+            var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ["A", "B", "C", "D"],
+                    datasets: [
+                        {
+                            data: [<?php echo $a ?>, <?php echo $b ?>, <?php echo $c ?>, <?php echo $d ?>],
+                            backgroundColor: [
+                                "#FF6384",
+                                "#36A2EB",
+                                "#FFCE56",
+                                "#9FF781"
+                            ],
+                            hoverBackgroundColor: [
+                                "#FF6384",
+                                "#36A2EB",
+                                "#FFCE56",
+                                "#9FF781"
+                            ]
+                        }]
+                },
+                options: {
+                    cutoutPercentage: 0
+                }
+            });
+        </script>
 </div>
 </body>
 </html>
