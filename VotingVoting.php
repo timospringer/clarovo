@@ -77,27 +77,6 @@ else {
     $per_b = round($b*100/$count) . "%";
     $per_c = round($c*100/$count) . "%";
     $per_d = round($d*100/$count) . "%";
-
-    /* echo"
-
-    <div class='container'>
-        <table class=\"table table-hover table-striped\">
-        <thead>
-        <th class=\"col-md-3\">A</th>
-        <th class=\"col-md-3\">B</th>
-        <th class=\"col-md-3\">C</th>
-        <th class=\"col-md-3\">D</th>
-        </thead>
-        <tbody>
-            <td class=\"col - md - 3\">$a ($per_a)</td>
-            <td class=\"col - md - 3\">$b ($per_b)</td>
-            <td class=\"col - md - 3\">$c ($per_c)</td>
-            <td class=\"col - md - 3\">$d ($per_d)</td>
-        </tbody>
-    </div>
-
-    ";
-    */
     
 }
 ?>

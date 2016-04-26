@@ -21,6 +21,7 @@ $voting = $VotingManager->findById($voting_id);
         <div class="navbar-header">
             <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-stats"></span> clarovo</a>
             <a class="btn btn-default navbar-btn" href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
+            <?php echo "<a href='QR_Code.php?voting_id=$voting->id' class='btn btn-primary btn-sm'>QR-Code generieren</a>" ?>
         </div>
     </div>
 </nav>
@@ -75,7 +76,6 @@ $voting = $VotingManager->findById($voting_id);
         else{e.value="no";location.reload();}
     }
 </script>
-
 
 </body>
 </html>

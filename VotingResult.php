@@ -49,10 +49,47 @@ $voting = $VotingManager->findById($voting_id);
     $per_b = round($b*100/$count) . "%";
     $per_c = round($c*100/$count) . "%";
     $per_d = round($d*100/$count) . "%";
+
+    
+    $get_options = "SELECT a, b, c, d FROM voting WHERE id=$voting->id";
+
+    $run_options = mysqli_query($con, $get_options);
+
+    $row_options = mysqli_fetch_array($run_options);
+
+    $a_option = $row_options['a'];
+    $b_option = $row_options['b'];
+    $c_option = $row_options['c'];
+    $d_option = $row_options['d'];
     ?>
 
     
     <br />
+  
+    
+
+<div class="container">
+
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr><th class="col-md-3">Antwort A</th>
+            <th class="col-md-3">Antwort B</th>
+            <th class="col-md-3">Antwort C</th>
+            <th class="col-md-3">Antwort D</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <?php
+            echo "<tr>";
+            echo "<td>$a_option</td>";
+            echo "<td>$b_option</td>";
+            echo "<td>$c_option</td>";
+            echo "<td>$d_option</td>";
+        ?>
+        </tbody>
+    
+</div>
     
 <div class="container">
     <canvas id="myChart">
@@ -85,5 +122,8 @@ $voting = $VotingManager->findById($voting_id);
             });
         </script>
 </div>
+
+    <br />
+
 </body>
 </html>

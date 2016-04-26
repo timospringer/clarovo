@@ -1,4 +1,4 @@
-<?PHP
+<?php
     require_once("Mapper/Dozent.php");
 
     session_start();
