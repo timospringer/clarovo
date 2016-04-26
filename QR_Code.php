@@ -1,7 +1,5 @@
 <?php
 
-
-
 include("inc/qrlib.php");
 
 $param = (int)htmlspecialchars($_GET["voting_id"], ENT_QUOTES, "UTF-8");

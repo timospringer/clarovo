@@ -53,8 +53,8 @@ $vorlesung = $VorlesungManager->findById($vorlesung_id);
                 echo "<td>$voting->c</td>";
                 echo "<td>$voting->d</td>";
                 echo "<td>
+                        <a href='QR_Code.php?voting_id=$voting->id' class='btn btn-primary btn-sm'>QR-Code</a>
                         <a href='VotingResult.php?voting_id=$voting->id' class='btn btn-success btn-sm'>anzeigen</a>
-                        <a href='VotingRead.php?voting_id=$voting->id' class='btn btn-primary btn-sm'>link</a>
                         <a href='VotingDelete_do.php?voting_id=$voting->id' class='btn btn-danger btn-sm'>löschen</a>
                       </td>";
                 echo "</tr>";

@@ -65,8 +65,8 @@ $voting = $VotingManager->findById($voting_id);
 
     
     <br />
-  
-    
+
+
 
 <div class="container">
 
@@ -88,9 +88,9 @@ $voting = $VotingManager->findById($voting_id);
             echo "<td>$d_option</td>";
         ?>
         </tbody>
-    
+
 </div>
-    
+
 <div class="container">
     <canvas id="myChart">
         <script>
